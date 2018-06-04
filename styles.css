@@ -17,27 +17,7 @@ body {
   overflow: hidden; }
 
 a {
-  position: relative;
-  z-index: 9999999;
-  background: #5f4ee4;
-  color: #91ff26;
-  padding: 22px;
-  text-transform: uppercase;
-  border-radius: 2px;
-  text-decoration: none;
-  font-size: 12px;
-  animation-name: float;
-  animation-iteration-count: infinite;
-  animation-fill-mode: forwards;
-  animation-duration: 5s;
-  animation-timing-function: ease-in-out;
-  display: inline-block;
   transition: all 260ms ease-in-out; }
-  a:nth-of-type(2) {
-    display: none; }
-  a:hover, a:active {
-    background: #91ff26;
-    color: #5f4ee4; }
 
 img {
   width: 100%;
@@ -51,6 +31,10 @@ h1 {
   animation-fill-mode: forwards;
   animation-duration: 3s;
   animation-timing-function: ease-in-out; }
+  @media screen and (max-width: 600px) {
+    h1 {
+      font-size: 40px;
+      line-height: 44px; } }
 
 h2 {
   font-size: 24px;
@@ -61,10 +45,20 @@ h2 {
   animation-timing-function: ease-in-out;
   font-weight: 400; }
 
+p {
+  font-size: 12px; }
+  p a {
+    font-weight: 600;
+    text-decoration: none;
+    color: rgba(95, 78, 228, 0.25); }
+    p a:hover {
+      opacity: 1; }
+
 main {
   position: relative;
   z-index: 1;
   max-width: 900px;
+  padding: 44px;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -79,7 +73,9 @@ main {
       padding: 0;
       display: flex;
       flex-wrap: wrap;
-      align-items: center; }
+      align-items: center;
+      pointer-events: none;
+      user-select: none; }
       main > div ul li {
         width: 12.5%;
         padding: 1%;
@@ -102,6 +98,29 @@ main {
           animation-duration: 5s; }
         main > div ul li:nth-child(8) {
           animation-duration: 6s; }
+
+.button {
+  position: relative;
+  z-index: 9999999;
+  background: #5f4ee4;
+  color: #91ff26;
+  padding: 22px;
+  text-transform: uppercase;
+  border-radius: 2px;
+  text-decoration: none;
+  font-size: 12px;
+  animation-name: float;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+  animation-duration: 5s;
+  animation-timing-function: ease-in-out;
+  display: inline-block;
+  transition: all 260ms ease-in-out; }
+  .button:nth-of-type(2) {
+    display: none; }
+  .button:hover, .button:active {
+    background: #91ff26;
+    color: #5f4ee4; }
 
 .bg, .bg video {
   height: 100vh;
@@ -129,9 +148,9 @@ video {
   z-index: 0;
   bottom: 0; }
 
-#flip:target main div a:nth-of-type(1) {
+#flip:target main div .button:nth-of-type(1) {
   display: none; }
-#flip:target main div a:nth-of-type(2) {
+#flip:target main div .button:nth-of-type(2) {
   display: inline-block; }
 #flip:target .bg {
   transform: rotate(0deg); }
