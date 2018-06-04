@@ -5,3 +5,4 @@ LIVE DEMO: https://splash-page.netlify.com/
 ---
 Compile SASS: sass --watch styles.scss:styles.css
 
+Thanks to https://dribbble.com/creativemints for the icons
